@@ -1,7 +1,7 @@
 <div class="timeline">
     <% var last = 0, year, yearArr = []; %>
 
-    <% site.posts.sort('date', -1).limit(site.posts.length).each(function(post){ %>
+    <% site.posts.sort('updated', -1).limit(site.posts.length).each(function(post){ %>
         <% year = post.date.year(); %>
         <% if (last != year){ %>
             <% if (yearArr.length != 0){ %><% } %>
@@ -9,7 +9,7 @@
             <% last = year; %>
             <div class="timeline-item">
                 <div class="timeline-left">
-                    <div class="timeline-icon icon-lg"></div>
+                    <div class="timeline-icon"></div>
                 </div>
                 <div class="timeline-content">
                     <div class="tile">
@@ -23,12 +23,15 @@
             </div>
             <div class="timeline-item">
                 <div class="timeline-left">
-                    <a class="timeline-icon" href="<%- url_for(post.path) %>"></a>
+                    <a class="timeline-icon icon-lg" href="<%- url_for(post.path) %>">
+                        <!-- type -->
+                        <i class="icon icon-check"></i>
+                    </a>
                 </div>
                 <div class="timeline-content stk-incident-card">
                     <div class="card bg-gray">
                         <div class="card-header">
-                            <p class="card-subtitle text-gray mb-1 h6"><%= date(post.date, 'MMMM DD, YYYY') %></p>
+                            <p class="card-subtitle text-gray mb-1 h6"><%= date(post.updated, 'MMMM DD, YYYY') %></p>
                             <p class="card-title h4 mb-2">
                                 <a href="<%- url_for(post.path) %>"><%= post.title %></a>
                             </p>
