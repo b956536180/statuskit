@@ -1,38 +1,24 @@
 ---
 title: Hello World
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+**Completed** - The scheduled maintenance has been completed.
 
-### Create a new post
+<small class="text-gray">Apr 15, 20:22 HKT</small>
 
-``` bash
-$ hexo new "My New Post"
-```
+**Update** - Due to unforeseen problems, maintenance could not be completed on time.
+We will deal with this issue as soon as possible.
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+<small class="text-gray">Apr 15, 20:22 HKT</small>
 
-### Run server
+**In progress** - Scheduled maintenance is currently in progress. We will provide updates as necessary.
 
-``` bash
-$ hexo server
-```
+<small class="text-gray">Apr 15, 20:22 HKT</small>
 
-More info: [Server](https://hexo.io/docs/server.html)
+**Scheduled** - This is an important update.
 
-### Generate static files
+Based on our terms and conditions(updated on April 8, 2018), rixCloud now has the rights to analyze traffic characteristics and block specific traffic to prevent abuse. These abuse traffic include BitTorrent and other similar traffic. 
 
-``` bash
-$ hexo generate
-```
+These features will be applied to our access points and may cause one to three connection interruptions with less than 10 seconds during the update process.
 
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/deployment.html)
+<small class="text-gray">Apr 15, 20:22 HKT</small>

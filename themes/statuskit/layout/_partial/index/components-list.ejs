@@ -2,8 +2,8 @@
     <div class="column">
         <% for (var i in theme.components){ %>
         <div class="accordion card bg-gray">
-            <input type="checkbox" id="accordion-4" name="accordion-checkbox" hidden="" <% if(theme.components[i].auto_expand === true) { %>checked<% } %>>
-            <label class="accordion-header c-hand" for="accordion-4">
+            <input type="checkbox" id="<%= i %>" name="accordion-checkbox" hidden="" <% if(theme.components[i].auto_expand === true) { %>checked<% } %>>
+            <label class="accordion-header c-hand" for="<%= i %>">
                 <div class="card-header">
                     <div class="card-title h5">
                         <span><%= theme.components[i].name %></span>

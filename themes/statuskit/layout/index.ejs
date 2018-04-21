@@ -5,9 +5,10 @@
     <%- partial('_partial/index/components-list') %>
 </div>
 <div class="container">
-    <% page.posts.each(function(post) { %>
-        <% if(!((typeof hasposttop === 'function') && post.top)) { %>
-            <%- partial('_partial/incident-entry', { post: post, index: true, pin: false }) %>
-        <% } %>
-     <% }); %>
+    <section class="stk-main-header-section">
+        <h2 class="h4">Past Incident</h2>
+    </section>
+</div>
+<div class="container stk-incident-list">
+    <%- partial('_partial/index/incident-list') %>
 </div>
