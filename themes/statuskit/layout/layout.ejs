@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+    Copyright 2018 neoFelhz
+    https://github.com/neoFelhz/statuskit
+-->
+
+<html>
+
+<%- partial('_partial/head') %>
+
+<body class="mdui-appbar-with-toolbar mdui-theme-primary-light-blue">
+
+    <!-- /****** AppBar ******/ -->
+    <%- partial('_partial/appbar') %>
+
+    <!-- /****** Content ******/ -->
+    <div>
+        <%- body %>
+    </div>
+
+    <!-- /****** Footer ******/ -->
+    <%- partial('_partial/footer') %>
+
+    <!-- /****** Drawer ******/ -->
+    <!-- Only show on small device -->
+    <%- partial('_partial/drawer') %>
+
+<%- partial('_partial/source/footer') %>
+
+</body>
+
+</html>
