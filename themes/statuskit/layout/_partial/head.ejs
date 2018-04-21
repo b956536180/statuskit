@@ -1,0 +1,65 @@
+<head>
+    <meta charset="utf-8">
+    <script>(/eruda=true/.test(window.location)||"true"==localStorage.getItem("active-eruda"))&&(document.write('<script src="https://cdn.jsdelivr.net/npm/eruda"><\/script>'),document.write("<script>eruda.init();<\/script>"))</script><script>/vconsole=true/.test(window.location)&&(document.write('<script src="https://cdn.jsdelivr.net/npm/vconsole"><\/script>'),document.write("<script>var vConsole = new VConsole();<\/script>"))</script>
+
+    <!-- Meta -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//cdnjs.loli.net">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
+    <link rel="preconnect" href="https://cdnjs.loli.net" crossorigin="anonymous">
+
+    <!-- Title -->
+    <title><% if(page.title) { %><%= page.title %> | <%= config.title %><% } else { %><%= config.title %><% } %></title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="<%= url_for(theme.head.favicon) %>">
+    <link rel="icon" href="<%= url_for(theme.head.high_res_favicon) %>">
+
+    <!-- Info -->
+    <meta name="format-detection" content="telephone=no">
+    <meta itemprop="name" content="<% if(page.title) { %><%= page.title %> | <%= config.title %><% } else { %><%= config.title %><% } %>">
+    <meta name="description" itemprop="description" content="<% if(page.description) { %><%= page.description %><% } else if(page.excerpt){ %><%= strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '') %><% } else if (config.description){ %><%= config.description %><% } %>">
+    <% if(theme.head.keywords) { %>
+        <meta name="keywords" content="<%= theme.head.keywords %>">
+    <% } %>
+    <% if(theme.color.android_chrome_color) { %>
+        <meta name="theme-color" content="<%= theme.color.android_chrome_color %>">
+    <% } %>
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.loli.net/ajax/libs/ieBetter.js/1.0.3/ieBetter-min.js"></script>
+        <script src="https://cdnjs.loli.net/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Import File -->
+    <%- partial('_source/head') %>
+
+    <!-- Site Verification -->
+    <% if(theme.head.site_verification.google) { %>
+        <meta name="google-site-verification" content="<%= theme.head.site_verification.google %>"
+    <% } %>
+    <% if(theme.head.site_verification.baidu) { %>
+        <meta name="baidu-site-verification" content="<%= theme.head.site_verification.baidu %>"
+    <% } %>
+
+    <!-- The Open Graph & Twitter Card Protocol -->
+    <meta property="og:url" content="<%= config.url + url_for(page.path).replace('index.html', '') %>">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<% if(page.title) { %><%= page.title %> | <%= config.title %><% } else { %><%= config.title %><% } %>">
+    <meta property="og:image" content="<%= url_for(theme.head.high_res_favicon) %>">
+    <meta property="og:description" content="<% if(page.description) { %><%= page.description %><% } else if(page.excerpt){ %><%= strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '') %><% } else if (config.description){ %><%= config.description %><% } %>">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Canonical link -->
+    <link rel="canonical" href="<%= config.url + url_for(page.path).replace('index.html', '') %>">
+
+</head>

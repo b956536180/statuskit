@@ -1,0 +1,47 @@
+<div class="columns">
+    <div class="column">
+        <% for (var i in theme.components){ %>
+        <div class="accordion card bg-gray">
+            <input type="checkbox" id="accordion-4" name="accordion-checkbox" hidden="" <% if(theme.components[i].auto_expand === true) { %>checked<% } %>>
+            <label class="accordion-header c-hand" for="accordion-4">
+                <div class="card-header">
+                    <div class="card-title h5">
+                        <span><%= theme.components[i].name %></span>
+                        <span class="text-success float-right"><i style="transform: unset" class="icon icon-check"></i></span>
+                    </div>
+                    <div class="card-subtitle text-gray">
+                        <span><%= theme.components[i].intro %></span>
+                        <span class="text-success float-right">Operational</span>
+                    </div>
+                </div>
+            </label>
+            <div class="accordion-body">
+                <div class="card-body">
+                <% for (var j in theme.components[i].components) { %>
+                    <div class="card">
+                        <div class="card-header">
+                            <% if (theme.components[i].components[j].intro ) { %>
+                                <p class="card-title mb-0">
+                                    <% if (theme.components[i].components[j].link ) { %>
+                                        <a href="<%= theme.components[i].components[j].link %>" target="_blank"><%= theme.components[i].components[j].name %></a>
+                                    <% } else { %>
+                                        <span><%= theme.components[i].components[j].name %></span>
+                                    <% } %>
+                                    <span class="text-success float-right">Operational</span>
+                                </p>
+                                <p class="card-subtitle text-gray mb-0"><small><%= theme.components[i].components[j].intro %></small></p>
+                            <% } else { %>
+                                <p class="card-title mb-0">
+                                    <span><%= theme.components[i].components[j].name %></span>
+                                    <span class="text-success float-right">Operational</span>
+                                </p>
+                            <% } %>
+                        </div>
+                    </div>
+                <% } %>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</div>

@@ -8,24 +8,18 @@
 
 <%- partial('_partial/head') %>
 
-<body class="mdui-appbar-with-toolbar mdui-theme-primary-light-blue">
+<body>
 
     <!-- /****** AppBar ******/ -->
     <%- partial('_partial/appbar') %>
 
     <!-- /****** Content ******/ -->
-    <div>
+    <main class="col-mx-auto">
         <%- body %>
-    </div>
+    </main>
 
     <!-- /****** Footer ******/ -->
     <%- partial('_partial/footer') %>
-
-    <!-- /****** Drawer ******/ -->
-    <!-- Only show on small device -->
-    <%- partial('_partial/drawer') %>
-
-<%- partial('_partial/source/footer') %>
 
 </body>
 

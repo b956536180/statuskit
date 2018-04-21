@@ -1,0 +1,13 @@
+<div class="container">
+    <%- partial('_partial/index/header') %>
+</div>
+<div class="container">
+    <%- partial('_partial/index/components-list') %>
+</div>
+<div class="container">
+    <% page.posts.each(function(post) { %>
+        <% if(!((typeof hasposttop === 'function') && post.top)) { %>
+            <%- partial('_partial/incident-entry', { post: post, index: true, pin: false }) %>
+        <% } %>
+     <% }); %>
+</div>

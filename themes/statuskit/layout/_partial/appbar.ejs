@@ -1,0 +1,10 @@
+<header class="stk-navbar navbar">
+    <section class="navbar-section">
+        <img class="stk-navbar-icon" src="<%= theme.appbar.icon %>">
+    </section>
+    <section class="navbar-section">
+        <% for (var i in theme.appbar.links){ %>
+            <a href="<%= theme.appbar.links[i].url %>" class="btn btn-link"><%= i %></a>
+        <% } %>
+    </section>
+</header>
