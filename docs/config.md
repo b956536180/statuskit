@@ -2,13 +2,4 @@
 
 ## 站点配置文件
 
-```yaml
-# Site
-title: Status
-description:
-author: John Doe
-timezone:
-```
-
-- title 站点标题
-- subtitl 站点副标题
+请自行根据 Hexo 官方文档进行配置。
