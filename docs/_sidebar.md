@@ -1,5 +1,6 @@
 - [开始使用](/start)
-- 配置
+- [配置](/config)
+- [指令](/script)
 - 状态页面 123
 - StatusKit 变量
 - 创建 Incident
