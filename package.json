@@ -1,10 +1,28 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "StatusKit",
+  "version": "0.1.0",
   "private": true,
+  "description": "A serverless status page kit to deploy your own status page everywhere, based on Hexo.",
+  "scripts": {
+    "generate": "hexo g",
+    "deploy": "hexo d",
+    "server": "hexo s",
+    "clean": "hexo clean",
+    "compress": "gulp",
+    "build": "hexo clean && hexo g && gulp"
+  },
   "hexo": {
     "version": "3.7.1"
   },
+  "repository": "neoFelhz/statuskit",
+  "homepage": "https://github.com/neoFelhz/statuskit",
+  "keywords": [
+    "statuspage",
+    "status-page",
+    "web-application",
+    "hexo",
+    "statuskit"
+  ],
   "dependencies": {
     "hexo": "^3.7.1",
     "hexo-generator-archive": "^0.1.5",
@@ -15,5 +33,14 @@
     "hexo-renderer-marked": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-htmlclean": "^2.7.15",
+    "gulp-htmlmin": "^3.0.0",
+    "ejs-lint": "^0.2.0",
+    "eslint": "^3.14.0",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0"
   }
 }

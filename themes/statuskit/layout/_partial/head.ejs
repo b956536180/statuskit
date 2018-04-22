@@ -17,8 +17,12 @@
     <title><% if(page.title) { %><%= page.title %> | <%= config.title %><% } else { %><%= config.title %><% } %></title>
 
     <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="<%= url_for(theme.head.favicon) %>">
-    <link rel="icon" href="<%= url_for(theme.head.high_res_favicon) %>">
+    <% if(theme.head.favicon) { %>
+        <link rel="icon shortcut" type="image/ico" href="<%= url_for(theme.head.favicon) %>">
+    <% } %>
+    <% if(theme.head.high_res_favicon) { %>
+        <link rel="icon" href="<%= url_for(theme.head.high_res_favicon) %>">
+    <% } %>
 
     <!-- Info -->
     <meta name="format-detection" content="telephone=no">
@@ -53,7 +57,9 @@
     <meta property="og:url" content="<%= config.url + url_for(page.path).replace('index.html', '') %>">
     <meta property="og:type" content="website">
     <meta property="og:title" content="<% if(page.title) { %><%= page.title %> | <%= config.title %><% } else { %><%= config.title %><% } %>">
-    <meta property="og:image" content="<%= url_for(theme.head.high_res_favicon) %>">
+    <% if(theme.head.high_res_favicon) { %>
+        <meta property="og:image" content="<%= url_for(theme.head.high_res_favicon) %>">
+    <% } %>
     <meta property="og:description" content="<% if(page.description) { %><%= page.description %><% } else if(page.excerpt){ %><%= strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '') %><% } else if (config.description){ %><%= config.description %><% } %>">
     <meta name="twitter:card" content="summary_large_image">
 

@@ -1,30 +1,26 @@
 ---
-title: Hello World
+title: 欢迎使用 StatusKit
 date: 2018-4-10 20:22
 updated: 2018-4-15 20:22
 stage: In progress # Investigating | Identified | Watching | Fixed | Scheduled | In progress | Update | Completed
 type: Scheduled Maintenance # Scheduled Maintenance | Incident Report
 degree: 3 # 1 | 2 | 3
-affected: # id
 ---
 
-**Completed** - The scheduled maintenance has been completed.
+**Completed** - 阅读 StatusKit 可以学习如何更好的使用 StatusKit
 
-<small class="text-gray">Apr 15, 20:22 HKT</small>
+<small class="text-gray">Apr 15, 20:22</small>
 
-**Update** - Due to unforeseen problems, maintenance could not be completed on time.
-We will deal with this issue as soon as possible.
+**Update** - 由于 Hexo 的特性，所以 Incident 支持使用 Markdown 书写
 
-<small class="text-gray">Apr 15, 20:22 HKT</small>
+<small class="text-gray">Apr 15, 20:22</small>
 
-**In progress** - Scheduled maintenance is currently in progress. We will provide updates as necessary.
+**In progress** - 这是一篇 Incident 的模板。你可以将它删除，换成你自己的 Incident。
 
-<small class="text-gray">Apr 15, 20:22 HKT</small>
+<small class="text-gray">Apr 15, 20:22</small>
 
 **Scheduled** - This is an important update.
 
-Based on our terms and conditions(updated on April 8, 2018), rixCloud now has the rights to analyze traffic characteristics and block specific traffic to prevent abuse. These abuse traffic include BitTorrent and other similar traffic. 
+欢迎使用 StatusKit！看起来你已经成功创建了一个 StatusKit 页面。
 
-These features will be applied to our access points and may cause one to three connection interruptions with less than 10 seconds during the update process.
-
-<small class="text-gray">Apr 15, 20:22 HKT</small>
+<small class="text-gray">Apr 15, 20:22</small>

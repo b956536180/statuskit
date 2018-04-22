@@ -1,0 +1,60 @@
+# ---------------------------------------------------------------
+# Site Information Settings
+# ---------------------------------------------------------------
+
+# Head info
+head:
+  favicon:
+  high_res_favicon:
+  keywords:
+  site_verification:
+    google:
+    baidu:
+
+# ---------------------------------------------------------------
+# Info Settings
+# ---------------------------------------------------------------
+
+# ---------- Appbar ----------
+appbar:
+  icon:
+  links:
+    StatusKit:
+      url: https://github.com/neoFelhz/StatusKit
+    #Link2:
+      #url:
+
+# ---------- Info ----------
+info:
+  title: StatusKit
+  intro:
+
+# ---------------------------------------------------------------
+# Components Settings
+# ---------------------------------------------------------------
+
+components:
+  user_interface:
+    name: User Interface
+    intro: Frontend Application
+    auto_expand: true
+    components:
+      website:
+        name: Website
+        intro: GitHub Repo page for StatusKit
+        degree: 1
+        link: https://github.com/neoFelhz/StatusKit
+      API:
+        name: APIs
+        intro:
+        degree: 1
+        link:
+  #Relay:
+    #name: Relay
+    #intro: Relay Service
+    #auto_expand: false
+    #components:
+      #JP:
+        #name: JP Reigon
+        #intro:
+        #degree: 1
