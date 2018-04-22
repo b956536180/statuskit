@@ -4,9 +4,32 @@
     </h1>
 </section>
 <section class="stk-main-header-section">
-    <div class="toast toast-success">
-        All Systems Operational
-    </div>
+    <% var i = new Array(); %>
+    <% for (var x in theme.components){ %>
+        <% for (var y in theme.components[x].components){ %>
+            <% i.push(theme.components[x].components[y].degree) %>
+        <% } %>
+    <% } %>
+    <% function getMaxOfArray(numArray) {
+        return Math.max.apply(null, numArray);
+    } %>
+    <% if (getMaxOfArray(i) === 1) { %>
+        <div class="toast toast-success">
+            All Systems Operational
+        </div>
+    <% } else if (getMaxOfArray(i) === 2) { %>
+        <div class="toast toast-warning">
+            Some systems are experiencing issues
+        </div>
+    <% } else if (getMaxOfArray(i) === 3) { %>
+        <div class="toast toast-warning">
+            Some systems are experiencing issues
+        </div>
+    <% } else if (getMaxOfArray(i) === 4) { %>
+        <div class="toast toast-error">
+            Some systems are experiencing a major outage
+        </div>
+    <% } %>
 </section>
 <section class="stk-main-header-section">
     <h2 class="h4">About This Site</h2>

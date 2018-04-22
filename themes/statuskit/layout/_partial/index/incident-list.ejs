@@ -25,15 +25,44 @@
                 <div class="timeline-left">
                     <a class="timeline-icon icon-lg" href="<%- url_for(post.path) %>">
                         <!-- type -->
-                        <i class="icon icon-check"></i>
+                        <% if (post.stage) { %>
+                            <% if (post.stage === "Fixed" || post.stage === "Completed") { %>
+                                <i class="icon icon-check"></i>
+                            <% } %>
+                            <% if (post.stage === "Investigating") { %>
+                                <i class="icon icon-search"></i>
+                            <% } %>
+                            <% if (post.stage === "Scheduled") { %>
+                                <i class="icon icon-time"></i>
+                            <% } %>
+                            <% if (post.stage === "Identified") { %>
+                                <i class="icon icon-bookmark"></i>
+                            <% } %>
+                            <% if (post.stage === "Watching") { %>
+                                <i class="icon icon-people"></i>
+                            <% } %>
+                            <% if (post.stage === "In progress" || post.stage === "Updated") { %>
+                                <i class="icon icon-refresh"></i>
+                            <% } %>
+                        <% } else { %>
+                        <% } %>
                     </a>
                 </div>
                 <div class="timeline-content stk-incident-card">
                     <div class="card bg-gray">
                         <div class="card-header">
                             <p class="card-subtitle text-gray mb-1 h6"><%= date(post.updated, 'MMMM DD, YYYY') %></p>
-                            <p class="card-title h4 mb-2">
-                                <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                            <p class="card-title h4 mb-1">
+                                <% if (post.degree === 1) { %>
+                                    <a href="<%- url_for(post.path) %>" style="color: #5755d9"><%= post.title %></a>
+                                <% } else if (post.degree === 2) { %>
+                                    <a href="<%- url_for(post.path) %>" style="color: #ffb700"><%= post.title %></a>
+                                <% } else if (post.degree === 3) { %>
+                                    <a href="<%- url_for(post.path) %>" style="color: #e85600"><%= post.title %></a>
+                                <% } else { %>
+                                    <a href="<%- url_for(post.path) %>" style="color: #50596c"><%= post.title %></a>
+                                <% } %>
+                                <span class="card-subtitle mb-2 h6"> - <%= post.stage %></span>
                             </p>
                         </div>
                         <div class="divider my-0"></div>
@@ -52,7 +81,7 @@
                     <div class="tile">
                         <div class="tile-content">
                             <p class="tile-subtitle text-gray mb-1"><%= date(post.date, config.date_format) %></p>
-                            <a href="<%- url_for(post.path) %>" style="color: #667189;"><p class="tile-title"><%= post.title %></p></a>
+                            <a href="<%- url_for(post.path) %>"><p class="tile-title text-success"><%= post.title %></p></a>
                         </div>
                     </div>
                 </div>

@@ -2,9 +2,9 @@
 title: Hello World
 date: 2018-4-10 20:22
 updated: 2018-4-15 20:22
-stage: # Investigating | Identified | Watching | Fixed | Scheduled | In progress | Update | Completed
-type: # Scheduled Maintenance | Incident Report
-degree: # 1 | 2 | 3
+stage: In progress # Investigating | Identified | Watching | Fixed | Scheduled | In progress | Update | Completed
+type: Scheduled Maintenance # Scheduled Maintenance | Incident Report
+degree: 3 # 1 | 2 | 3
 affected: # id
 ---
 

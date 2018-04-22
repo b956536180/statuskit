@@ -1,44 +1,56 @@
 <div class="columns">
     <div class="column">
         <% for (var i in theme.components){ %>
-        <div class="accordion card bg-gray">
+        <div class="accordion card">
             <input type="checkbox" id="<%= i %>" name="accordion-checkbox" hidden="" <% if(theme.components[i].auto_expand === true) { %>checked<% } %>>
             <label class="accordion-header c-hand" for="<%= i %>">
                 <div class="p-2">
                     <span class="card-title h5"><%= theme.components[i].name %></span>
-                    <span class="card-subtitle float-right text-success">Operational</span>
+                    <% var k = new Array(); %>
+                    <% for (var l in theme.components[i].components) { %>
+                        <% k.push(theme.components[i].components[l].degree) %>
+                    <% } %>
+                    <% function getMaxOfArray(numArray) {
+                        return Math.max.apply(null, numArray);
+                    } %>
+                    <% if (getMaxOfArray(k) === 1) { %>
+                        <span class="stk-type-icon bg-success float-right circle"></span>
+                    <% } else if (getMaxOfArray(k) === 2) { %>
+                        <span class="stk-type-icon bg-primary float-right circle"></span>
+                    <% } else if (getMaxOfArray(k) === 3) { %>
+                        <span class="stk-type-icon bg-warning float-right circle"></span>
+                    <% } else if (getMaxOfArray(k) === 4) { %>
+                        <span class="stk-type-icon bg-error float-right circle"></span>
+                    <% } %>
                 </div>
             </label>
             <div class="accordion-body" style="margin-bottom: 0">
                 <div class="card-body" style="padding-top: 0">
-                <div class="text-gray mb-5 small"><%= theme.components[i].intro %></div>
-                <% for (var j in theme.components[i].components) { %>
-                    <div class="card">
-                        <div class="p-2">
-                            <% if (theme.components[i].components[j].intro) { %>
-                                <p class="card-title mb-0">
-                                    <% if (theme.components[i].components[j].link) { %>
-                                        <a href="<%= theme.components[i].components[j].link %>" target="_blank"><%= theme.components[i].components[j].name %></a>
-                                        <span class="btn btn-link tooltip p-0 mb-1" data-tooltip="<%= theme.components[i].components[j].intro %>" style="height: 18px"><i><svg fill="#acb3c2" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg></i></span>
-                                    <% } else { %>
-                                        <span><%= theme.components[i].components[j].name %></span>
-                                        <span class="btn btn-link tooltip p-0 mb-1" data-tooltip="<%= theme.components[i].components[j].intro %>" style="height: 18px"><i><svg fill="#acb3c2" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg></i></span>
-                                    <% } %>
-                                    <span class="text-success float-right">Operational</span>
-                                </p>
+                    <div class="text-gray mb-5 small"><%= theme.components[i].intro %></div>
+                    <% for (var j in theme.components[i].components) { %>
+                    <div class="my-1 p-2">
+                        <p class="card-title mb-0">
+                            <% if (theme.components[i].components[j].link) { %>
+                                <a href="<%= theme.components[i].components[j].link %>" target="_blank" style="color: #50596c"><%= theme.components[i].components[j].name %></a>
                             <% } else { %>
-                                <p class="card-title mb-0">
-                                    <% if (theme.components[i].components[j].link ) { %>
-                                        <a href="<%= theme.components[i].components[j].link %>" target="_blank"><%= theme.components[i].components[j].name %></a>
-                                    <% } else { %>
-                                        <span><%= theme.components[i].components[j].name %></span>
-                                    <% } %>
-                                    <span class="text-success float-right">Operational</span>
-                                </p>
+                                <span><%= theme.components[i].components[j].name %></span>
                             <% } %>
-                        </div>
+                            <% if (theme.components[i].components[j].intro) { %>
+                                <span class="btn btn-link tooltip p-0 mb-1" data-tooltip="<%= theme.components[i].components[j].intro %>" style="height: 18px"><i><svg fill="#acb3c2" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg></i></span>
+                            <% } %>
+
+                            <% if (theme.components[i].components[j].degree === 1) { %>
+                                <span class="text-success float-right">Operational</span>
+                            <% } else if (theme.components[i].components[j].degree === 2) { %>
+                                <span class="text-primary float-right">Performance Issues</span>
+                            <% } else if (theme.components[i].components[j].degree === 3) { %>
+                                <span class="text-warning float-right">Partial Outage</span>
+                            <% } else if (theme.components[i].components[j].degree === 4) { %>
+                                <span class="text-error float-right">Major Outage</span>
+                            <% } %>
+                        </p>
                     </div>
-                <% } %>
+                    <% } %>
                 </div>
             </div>
         </div>
