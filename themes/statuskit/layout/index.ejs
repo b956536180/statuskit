@@ -12,3 +12,16 @@
 <div class="container stk-incident-list">
     <%- partial('_partial/index/incident-list') %>
 </div>
+<div class="container">
+    <% if (page.total > 1) { %>
+        <!-- Index nav -->
+        <ul class="pagination">
+            <% if (page.prev){ %>
+                <li class="page-item page-prev"><a href="<%- url_for(page.prev_link) %>"><div class="page-item-title h5"><i class="icon icon-back"></i></div><div class="page-item-subtitle">Previous</div></a></li>
+            <% } %>
+            <% if (page.next){ %>
+                <li class="page-item page-next"><a href="<%- url_for(page.next_link) %>"><div class="page-item-title h5"><i class="icon icon-forward"></i></div><div class="page-item-subtitle">Next</div></a></li>
+            <% } %>
+        </ul>
+    <% } %>
+</div>
