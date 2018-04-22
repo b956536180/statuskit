@@ -5,6 +5,7 @@ updated: 2018-4-15 20:22
 stage: # Investigating | Identified | Watching | Fixed | Scheduled | In progress | Update | Completed
 type: # Scheduled Maintenance | Incident Report
 degree: # 1 | 2 | 3
+affected: # id
 ---
 
 **Completed** - The scheduled maintenance has been completed.
