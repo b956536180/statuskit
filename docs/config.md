@@ -70,4 +70,5 @@ components:
 - website: Component 的识别名，在页面中不显示。要求识别名两两不相同。
 - name: Component 的标题，显示在页面中
 - intro: Component 的介绍，可选
-- degree: 当前 Component 的状态。1 是 Operational 2 是 Performance Issue 3 是 Partial Outage 4 是 Major Outage
+- degree: 当前 Component 的状态。1 是 Operational、2 是 Performance Issue、3 是 Partial Outage、4 是 Major Outage
+- link: Component 的链接，可选。
